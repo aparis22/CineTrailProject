@@ -14,7 +14,7 @@ function Slider({apiKey, baseUrl}) {
     useEffect (()=>{
         axios.get(`${baseUrl}/movie/upcoming?api_key=${apiKey}`)
         .then(res=>{
-            console.log(res.data.results)
+            // console.log(res.data.results)
             setUpcomingMovies(res.data.results)
             const rating = res.data.results.map(movie => movie.vote_average/2)
             setMovieRatings(rating)

@@ -20,7 +20,7 @@ function Genres({apiKey, baseUrl, moviesGenres}) {
         return(
             <p key={id}>
                 {genre?.name}
-                {index !== moviesGenres.length - 1  && ",  "}
+                {index !== moviesGenres.length - 1  && ", "}
             </p>
         )
         })}
