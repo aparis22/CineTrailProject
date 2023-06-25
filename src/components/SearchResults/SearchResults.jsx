@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import noImage from '../../assets/no-image.svg.png'
 
 function SearchResults({movie}) {
     const navigate = useNavigate()
@@ -11,6 +12,8 @@ function SearchResults({movie}) {
     }
   return (
     <div className='search-results-item' onClick={handleNavigation}>
+      <img className='result-img' src={imageError ? noImage : `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+        onError={() => setImageError(true)} alt='' />
         <p>{movie.title}</p>
     </div>
   )
